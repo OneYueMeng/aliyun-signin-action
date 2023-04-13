@@ -1,6 +1,6 @@
 name: Aliyun Signin
 
-on: schedule
+on:
   schedule:
   # 每天国际时间 18:30 运行一次，中国时间 02:30
     - cron: '30 18 * * *'
@@ -9,7 +9,7 @@ jobs:
   signin:
     name: Aliyun Signin
     runs-on: ububtu-latest
-    step:
+    steps:
       - uses: ImYrs/aliyun-auto-signin@main
         with:
           REFRESH_TOKENS: ${{ secrets.REFRESH_TOKENS }}
